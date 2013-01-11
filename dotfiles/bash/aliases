@@ -1,0 +1,9 @@
+alias ll="ls -lahG"
+alias ..="cd .."
+alias cdd="cd -"
+alias h="history"
+alias ssht="ssh -ND 8080"
+alias reload="source ~/.bashrc"
+
+ 
+
