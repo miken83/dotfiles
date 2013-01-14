@@ -17,6 +17,15 @@ alias ssht="ssh -ND 8080"
 #Shortcut to reload source file
 alias reload="source ~/.bashrc"
 
+#Text Wrangler shortcut
+alias e="edit"
+
+#git shortcuts
+alias g="git"
+alias gca="git commit -am"
+alias gp="git push"
+
+
 
 
  
