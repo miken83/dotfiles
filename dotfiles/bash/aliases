@@ -1,3 +1,6 @@
+#Shortcut to edit aliases files
+
+alias ae="edit ~/bin/dotfiles/bash/aliases"
 
 #Modified ls command
 alias ll="ls -lahG"
@@ -24,6 +27,11 @@ alias e="edit"
 alias g="git"
 alias gca="git commit -am"
 alias gp="git push"
+alias gs="git status"
+
+#Shortcut for join function
+
+alias j="Join"
 
 
 
