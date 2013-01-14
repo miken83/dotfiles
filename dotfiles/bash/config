@@ -2,7 +2,13 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
         . `brew --prefix`/etc/bash_completion
 fi
 
+
+#prompt with pwd and git branch
 PS1="[\W]\$(__git_ps1)$ " 
+
+
+#prompt with pwd for systems with out git/bash-completion installed
+#PS1="[\W]$ "
 
 
 

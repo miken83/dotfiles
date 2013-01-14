@@ -1,8 +1,20 @@
+
+#Modified ls command
 alias ll="ls -lahG"
+
+#Shortcut to go up a directory
 alias ..="cd .."
+
+#Shortcut to go to previous working directory
 alias cdd="cd -"
+
+#Shortcut for history
 alias h="history"
+
+#Shortcut for ssh tunnel
 alias ssht="ssh -ND 8080"
+
+#Shortcut to reload source file
 alias reload="source ~/.bashrc"
 
 
