@@ -30,8 +30,12 @@ alias gp="git push"
 alias gs="git status"
 
 #Shortcut for join function
-
 alias j="Join"
+
+#Human friendly du and df
+alias du="du -h"
+alias df="df -h"
+
 
 
 

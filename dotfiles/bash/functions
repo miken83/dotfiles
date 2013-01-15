@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-# A Function to join multiple video files together
+# A Function to join multiple avi files together
 
 join (){
 
