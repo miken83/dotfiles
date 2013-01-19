@@ -8,3 +8,9 @@ Host dts
   User miken83
   Port 2202
   
+
+Host imac
+  HostName 98.212.40.62
+  Port 2022
+  
+  
