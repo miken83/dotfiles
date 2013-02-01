@@ -36,6 +36,8 @@ alias j="Join"
 alias du="du -h"
 alias df="df -h"
 
+#Default to irb simple prompt
+alias irb="irb --simple-prompt"
 
 
 
