@@ -12,3 +12,12 @@ mencoder -oac copy -ovc copy -o $1 $2 $3
 echo "Files successfully joined!"
 
 }
+
+
+remux(){
+	x=$1
+	y=${x%.*}
+	ffmpeg -i $y.mkv -c:v copy -c:a copy $y.mp4
+	rm $1
+	echo "File successfully remuxed!"
+}
