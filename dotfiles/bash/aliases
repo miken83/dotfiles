@@ -20,8 +20,13 @@ alias ssht="ssh -ND 8080"
 #Shortcut to reload source file
 alias reload="source ~/.bashrc"
 
+#Which ruby and which gem
+alias wr="which ruby"
+alias wg="which gem"
+
+
 #Text Wrangler shortcut
-alias e="edit"
+alias e="subl"
 
 #git shortcuts
 alias g="git"
