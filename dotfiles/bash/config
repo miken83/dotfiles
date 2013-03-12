@@ -25,7 +25,7 @@ function parse_git_dirty {
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
 }
-export PS1="$BLUE[\W]$CYAN\$(parse_git_branch)$OFF\n\$ "
+export PS1="$BLUE[\W]$CYAN\$(parse_git_branch)$YELLOW\$ $OFF"
 
 #prompt with pwd and git branch
 #PS1="$BLUE[\W]$YELLOW\$(parse_git_branch)$reset\$ " 
