@@ -6,33 +6,41 @@ fi
 
 
 RED="\[\033[0;31m\]"
-GREEN="\[\033[1;32m\]"
-YELLOW="\[\033[1;93m\]"
-BLUE="\[\033[1;34m\]"
-PURPLE="\[\033[1;35m\]"
-TEAL="\[\033[1;36m\]"
+GREEN="\[\033[0;32m\]"
+YELLOW="\[\033[0;33m\]"
+BLUE="\[\033[0;34m\]"
+PURPLE="\[\033[0;35m\]"
+TEAL="\[\033[0;96m\]"
 GRAY="\[\033[0;37m\]"
 WHITE="\[\033[0;38m\]"
-CYAN="\[\033[1;36m\]"
+CYAN="\[\033[0;36m\]"
 reset=$(tput sgr0)
 OFF="\[\033[0m\]"
 
 #prompt with pwd, git branch and git dirty status
 
-function parse_git_dirty {
-  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo " ☆ "
+function parse_git_status {
+  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo -e " \033[0;31m✗\033\[0;35m "
+  [[ $(git status 2> /dev/null | tail -n1) = "nothing to commit (working directory clean)" ]] && echo -e " \033[0;32m✓\033\[0;35m "
 }
 function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/git:(\1$(parse_git_status))/"
 }
-export PS1="$BLUE[\W]$CYAN\$(parse_git_branch)$YELLOW\$ $OFF"
+export PS1="$BLUE\W $PURPLE\$(parse_git_branch) $YELLOW\$ $OFF"
 
 #prompt with pwd and git branch
 #PS1="$BLUE[\W]$YELLOW\$(parse_git_branch)$reset\$ " 
 
 
 #prompt with pwd for systems with out git/bash-completion installed
-#PS1="[\W]$ "
+#PS1="[\W]\$ "
+
+#export GIT_PS1_SHOWDIRTYSTATE=1
+
+#PS1="$BLUE[\W]$YELLOW\$(__git_ps1)$reset\$ " 
 
 
-# ⚠ ⚡ ☆ ★
+# ⚠ ⚡ ☆ ★ ✑", "✒", "÷", "‰", "√", "≠", "∞", "❛", "❜", "™", "©", "®", "✄", "✁", "✂", "✇", "✿", "❀", "“", "”", "„", "‟", "«", "»", "♪", "♫", "…", "◆", "◇", "✣", "✪", "✰", "✧", "✦", "☔", "☕", "☼", "☾", "❆", "❅", "❄", "✵", "♲", "♻", "♿", "⚅", "⚑", "⚐"
+#arrows: "←", "↑", "→", "↓", "↔", "↕", "⇄", "⇅", "↲", "↳", "↴", "↵", "↶", "↷", "↺ ", "↻", "➔", "➘", "➙", "➚", "➜", "➟", "➠", "➤", "➥", "➨", "➫", "➬", "➭", "➮", "➯", "➲", "➳", "➵", "➶", "➷", "➸", "➹", "➺", "➻", "➼", "➽", "➾", "◀", "▶", "◁", "▷", "◊"
+#other symbols: "⚒", "⚓", "⚔", "⚕", "⚘", "⚖", "⚛", "⚚", "⚠", "⚡", "♀", "♂", "⚢", "⚣", "⚤", "⚰", "⚱", "☢", "☤", "✝", "☦", "☧", "☨", 
+#most wanted symbols: "☺", "☻", "✌", "✍", "✎", "✉", "☀", "☃", "☁", "☂", "★", "☆", "☮", "☯", "〠", "☎", "☏", "♕", "❏", "☐", "☑", "☒", "✓", "✗", "¢", "€", "£", "❤", "❣", "❦", "♣", "♤", "♥", "♦", "♧", "►", "❝", "❞", "☜", "☝", "☞", "☟", "☚", "☛", "☹", "త", "☣", "☠"
