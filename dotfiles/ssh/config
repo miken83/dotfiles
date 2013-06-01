@@ -1,5 +1,5 @@
-Host brownie
-  HostName brownie.whatbox.ca
+Host draco
+  HostName draco.whatbox.ca
   User miken83
   
   
@@ -7,10 +7,5 @@ Host dts
   HostName 5.135.183.193
   User miken83
   Port 2202
-  
-
-Host imac
-  HostName 98.212.40.62
-  Port 2022
   
   
