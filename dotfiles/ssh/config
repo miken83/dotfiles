@@ -1,11 +1,3 @@
 Host draco
   HostName draco.whatbox.ca
   User miken83
-  
-  
-Host dts
-  HostName 5.135.183.193
-  User miken83
-  Port 2202
-  
-  
